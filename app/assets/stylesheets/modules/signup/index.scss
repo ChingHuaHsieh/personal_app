@@ -1,0 +1,59 @@
+.logo {
+  text-align: center;
+  color: #17a2b8 ;
+  svg, span {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+.container-fluid {
+  width: 80%;
+  .jumbotron {
+    background-image: url("back2");
+    // background-image: image-url("text_area.jpg");
+    background-size: cover;
+  }
+  .signup_area {
+    margin-top: 20px;
+    display: inline;
+  }
+  a {
+    margin-left: 40px;
+  }
+  .link_area {
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 30px;
+    #collapseExample {
+      margin-top: 20px;
+    }
+  }
+  .center {
+    letter-spacing: -1px;
+    text-align: center;
+  }
+}
+
+.title {
+  color: #17a2b8 ;
+  font-weight: 500;
+  opacity: 0.8;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+  //  未使用  //
+.footer {
+  height: 80px;
+  opacity: 0.8;
+  .image_repeat {
+    height: 80px;
+    background-image: url("suse-brands.svg");
+    background-repeat : repeat; 
+    background-size: 90px;
+  }
+}
