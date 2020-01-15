@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 2020_01_13_025054) do
     t.text "description"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "mother_language", null: false
-    t.integer "learning_language", null: false
-    t.integer "site_language", null: false
+    t.integer "mother_language_id", null: false
+    t.integer "learning_language_id", null: false
+    t.integer "site_language_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

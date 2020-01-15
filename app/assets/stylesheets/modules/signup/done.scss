@@ -1,0 +1,32 @@
+.card_area {
+  width: 700px;
+  margin: 30px auto 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.big_word {
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.card-body {
+  padding-top: 0px;
+}
+
+.text_align_center {
+  text-align: center;
+}
+
+.padding {
+  padding: 15px 0 15px ;
+}
+
+.box-shadow {
+  box-shadow: 0 2px 4px rgba(41, 29, 29, 0.18);
+}
+
+.info_color_white {
+  color: white;
+  background-color: #17a2b8 ;
+}

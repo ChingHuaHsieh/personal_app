@@ -8,9 +8,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.integer :mother_language,     null: false
-      t.integer :learning_language,     null: false
-      t.integer :site_language,     null: false
+      t.integer :mother_language_id,     null: false
+      t.integer :learning_language_id,     null: false
+      t.integer :site_language_id,     null: false
 
       ## Recoverable
       t.string   :reset_password_token
