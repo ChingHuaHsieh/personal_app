@@ -1,0 +1,150 @@
+<%= render partial: "logo" %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text_align_center">
+    <h1 class="display-4">
+      User Registration<br>
+      会員情報入力<br>
+      會員登入
+    </h1>
+    <hr class="my-4">
+    <p class="lead">
+      We'll never share your information with anyone else.<br>
+      安心・安全にご利用いただくために、ユーザー情報の登録にお願いします。他のお客さまに公開されることはありません。<br>
+      請告訴我們一些關於您、以下情報不會公開於第三者。
+    </p>
+  </div>
+</div>
+
+<div class="regis_form">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">English</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">日本語</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">中文（繁體）</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      
+      <%# English form %>
+      
+      <div class="regis_form">
+        <%= form_with model: @user, local: true, url: signup_index_path, method: 'POST', novalidate: 'novalidate' do |f| %>
+          <div class="form-group">
+            <%= f.label 'Nick name' %>
+            <%= f.text_field :nickname, { class: 'form-control', id: 'exampleInputEmail1', "aria-describedby": "emailHelp", placeholder: 'Enter nick name' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'Email' %>
+            <%= f.email_field :email, { class: 'form-control', id: 'exampleInputEmail1', placeholder: 'Enter email' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'password' %>
+            <%= f.password_field :password, { class: 'form-control',  placeholder: 'Enter Password' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'password for confirmation' %>
+            <%= f.password_field :password_confirmation, { class: 'form-control', placeholder: 'Enter password for confirmation' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'mother_language' %>
+            <%= f.collection_select :mother_language_id, MotherLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'learning_language' %>
+            <%= f.collection_select :learning_language_id, LearningLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'site_language' %>
+            <%= f.collection_select :site_language_id, SiteLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <%= f.submit "submit", class:"btn btn-info" %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      
+      <%# 日本語 form %>
+
+      <div class="regis_form">
+        <%= form_with model: @user, local: true, url: signup_index_path, method: 'POST', novalidate: 'novalidate' do |f| %>
+          <div class="form-group">
+            <%= f.label 'ニックネーム' %>
+            <%= f.text_field :nickname, { class: 'form-control', id: 'exampleInputEmail1', "aria-describedby": "emailHelp", placeholder: 'Enter nick name' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'メールアドレス' %>
+            <%= f.email_field :email, { class: 'form-control', id: 'exampleInputEmail1', placeholder: 'Enter email' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'パスワード' %>
+            <%= f.password_field :password, { class: 'form-control',  placeholder: 'Enter Password' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'パスワード (確認)' %>
+            <%= f.password_field :password_confirmation, { class: 'form-control', placeholder: 'Enter password for confirmation' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label '母語' %>
+            <%= f.collection_select :mother_language_id, MotherLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label '学習中言語' %>
+            <%= f.collection_select :learning_language_id, LearningLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label 'サイドの表示言語' %>
+            <%= f.collection_select :site_language_id, SiteLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <%= f.submit "submit", class:"btn btn-info" %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      
+      <%# 中文 form %>
+
+      <div class="regis_form">
+        <%= form_with model: @user, local: true, url: signup_index_path, method: 'POST', novalidate: 'novalidate' do |f| %>
+          <div class="form-group">
+            <%= f.label '暱稱' %>
+            <%= f.text_field :nickname, { class: 'form-control', id: 'exampleInputEmail1', "aria-describedby": "emailHelp", placeholder: 'Enter nick name' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label '電子郵件' %>
+            <%= f.email_field :email, { class: 'form-control', id: 'exampleInputEmail1', placeholder: 'Enter email' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label '密碼' %>
+            <%= f.password_field :password, { class: 'form-control',  placeholder: 'Enter Password' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label '密碼（確認用）' %>
+            <%= f.password_field :password_confirmation, { class: 'form-control', placeholder: 'Enter password for confirmation' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label '母語' %>
+            <%= f.collection_select :mother_language_id, MotherLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label '學習中的語言' %>
+            <%= f.collection_select :learning_language_id, LearningLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label '網站的顯示語言' %>
+            <%= f.collection_select :site_language_id, SiteLanguage.all, :id, :value, { prompt: '---', id: 'exampleFormControlSelect1'}, {class: "form-control"} %>
+          </div>
+          <%= f.submit "submit", class:"btn btn-info" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
