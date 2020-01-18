@@ -1,0 +1,60 @@
+.mid_container {
+  display: flex;
+  height: calc(100% - 94px);
+}
+
+.border_right {
+  border-right: 1px solid #eee;
+  width: 150px;
+}
+
+.width140 {
+  width: 150px !important;
+}
+
+.padiing5 {
+  padding: 5px;
+}
+
+.center {
+  width: calc(100% - 300px);
+}
+
+.none_text_dec{
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+// .text_setting {
+//   padding: 0 auto;
+//   overflow: scroll;
+//   word-break: break-word;
+//   margin: 0 auto;
+// }
+
+.card-body {
+  padding-top: 20px;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.padding_left {
+  padding-left: 20px;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.none_text_dec {
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,2 @@
+class QCrad < ApplicationRecord
+end
