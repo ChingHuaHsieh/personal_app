@@ -1,6 +1,7 @@
 class SignupController < ApplicationController
 
   before_action :authenticate_user!, only: [:done]
+  before_action :redirect_to_userinfo, only: :index
 
   def index
   end
@@ -33,5 +34,11 @@ private
       :learning_language_id,
       :site_language_id
     )
+  end
+
+  def redirect_to_userinfo
+    if user_signed_in?
+      redirect_to "/posts/user_info"
+    end
   end
 end
