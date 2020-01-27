@@ -1,0 +1,23 @@
+en:                              ## 言語名
+  dictionary:                    ## 共通系であることを示す
+    header:                       ## 画面のタイトル
+      logout: "logout"
+      language: "language"
+      mypage: "mypage"
+      NewQuestion: "new question"
+      answer: "answer"
+    side_bar:
+      SearchCard: "Search card"
+      mypage: "mypage"
+      NewQuestion: "new question"
+      answer: "answer"
+    user_card:
+      title: "%{user_name}'home"
+      Edit: "Edit"
+      NativeLanguage: " Native language : %{user_mother_language}"
+      LanguageOfStudy: " Language of study : %{user_learning_language}"
+      CardWritten: "Card Written : %{user_q_cards_count}"
+      CorrectionsMade: "Corrections made : %{user_a_cards_count}"
+    user_info:
+      CardWritten: "Card Written"
+      CorrectionsMade: "Corrections made"

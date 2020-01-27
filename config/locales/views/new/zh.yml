@@ -1,0 +1,22 @@
+zh:
+  new:
+    upper:
+      Home: "個人頁面"
+      NewQuestionCard: "新的提問卡"
+      QuestionCard: "提問卡"
+      LearnMore: "了解更多"
+      LearnMoreContent: "提問的關鍵在於句子的使用時機、
+                         即使您了解句子的意思、
+                         但常常發生的事您並不知道如何使用句子、
+                         製作提問卡讓大家來替您解答吧！"
+      Explain: "不要客氣地使用提問卡提升您的學習效率吧！"
+    form:
+      Language: "提問卡的語言"
+      SelectLanguage: "選擇語言"
+      Title(Optional): "標題(任意)"
+      TitleExplain: "若是標題空白、說明的第一行內容將會成為標題。"
+      Text: "説明"
+      TextExplain: "輸入您希望更深入了解使用時機的句子、越是詳細的說明、越容易得到解答。"
+      MotherLanguageVersion: "使用您的母語來寫下說明吧。(任意)"
+      MotherLanguageVersionExplain: "使用母語來讓解答者更容易明白提問、同時讓解答者學習您的母語。"
+      submit: "提交"

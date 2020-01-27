@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class QCradTest < ActiveSupport::TestCase
+class ACardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

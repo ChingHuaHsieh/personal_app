@@ -1,2 +1,76 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= render partial: "header" %>
+
+<div class="mid_container">
+  
+  <%= render partial: "side_bar" %>
+  
+  <div class="center container padding0 border paddingbottom50 rounded marginbottomauto">
+    
+    <nav aria-label="breadcrumb ">
+      <ol class="breadcrumb margin0 border-bottom">
+        <li class="breadcrumb-item">
+          <%= link_to "#{t('new.upper.Home')}", user_info_post_path(current_user.id) %>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <%=  t('new.upper.NewQuestionCard') %>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid padding0 ">
+      <div class="container paddingbottom5">
+        <div class="upper">
+          <h1 class="display-4 letter_space">
+            <%=  t('new.upper.QuestionCard') %>
+          </h1>
+          <p class="signup_area">
+            <a class="btn btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <%=  t('new.upper.LearnMore') %>
+            </a>
+          </p>
+        </div>
+        <div class="collapse marginbottom10" id="collapseExample">
+          <div class="card card-body">
+            <%=  t('new.upper.LearnMoreContent') %>
+          </div>
+        </div>
+        <p class="lead border-top paddingtop15">
+          <%=  t('new.upper.Explain') %>
+        </p>
+      </div>
+    </div>
+
+    <%= form_with model: @q_card, local: true, class: "padding30", url: posts_path, method: 'POST', novalidate: 'novalidate' do |f| %>
+      <div class="form-group">
+        <%= f.label "#{t('new.form.Language')}" %><span class="text-danger">( <i class="fas fa-exclamation"></i> )</span>
+        <%= f.collection_select :language_id, Language.all, :id, :value, { prompt: "#{t('new.form.SelectLanguage')}"}, {class: "form-control width50"} %>
+      </div>
+      <hr class="my-4">
+
+      <div class="form-group">
+        <%= f.label "#{t('new.form.Title(Optional)')}" %>
+        <%= f.text_field :theme, { class: 'form-control',  placeholder: "#{t('new.form.TitleExplain')}" } %>
+      </div>
+      <hr class="my-4">
+      
+      <div class="form-group">
+        <%= f.label "#{t('new.form.Text')}" %><span class="text-danger">( <i class="fas fa-exclamation"></i> )</span>
+        <%= f.text_area :description, { class: 'form-control',  placeholder: "#{t('new.form.TextExplain')}",rows: "3" } %>
+      </div>
+
+      <hr class="my-4">
+      
+      <div class="form-group">
+        <%= f.label "#{t('new.form.MotherLanguageVersion')}" %>
+        <%= f.text_area :m_description, { class: 'form-control',  placeholder: "#{t('new.form.MotherLanguageVersionExplain')}",rows: "3" } %>
+      </div>
+      
+      <hr class="my-4">
+      <%= f.submit "#{t('new.form.submit')}", class:"btn btn-info text-center" %>
+    <% end %>
+
+  </div>
+  
+  
+  <%= render partial: "random_list" %>
+</div>

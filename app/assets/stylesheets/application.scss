@@ -2,3 +2,15 @@
 @import "modules/signup/index";
 @import "modules/signup/done";
 @import "modules/posts/user_info";
+@import "modules/posts/new";
+@import "modules/posts/show";
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}

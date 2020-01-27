@@ -1,0 +1,39 @@
+<div class="text-right marginleft100 rounded">
+  <div class="card-header h5 upper borderbottom paddingbottom0">
+    <%= comment.user.nickname %>
+    <div>
+      <small class="text-secondary time_text">
+        <%= comment.created_at.strftime("%Y/%m/%d %H:%M") %>
+      </small>
+
+      <!-- Button trigger modal -->
+      <div class="destroy_btn d-inline" data-toggle="modal" data-target="#exampleModal_<%= comment.id %>">
+        <i class="far fa-trash-alt"></i>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal_<%= comment.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            
+            <h5 class="modal-body text-center font-weight-normal">
+              Really destroy this comment?
+            </h5>
+            <div class="modal-footer">
+              <div class="btn btn-secondary" data-dismiss="modal">
+               Maybe latter
+              </div>
+              <%= link_to "Yes, I want",comment_path(comment.id), method:"DELETE", class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="card-header borderbottom text-left">
+    <h6 class="rounded comment_text">
+      <%= comment.text %>
+    </h6>
+  </div>
+</div>

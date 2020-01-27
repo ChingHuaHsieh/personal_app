@@ -1,0 +1,24 @@
+en:
+  new:
+    upper:
+      Home: "Home"
+      NewQuestionCard: "New Question Card"
+      QuestionCard: "Question Card"
+      LearnMore: "Learn more"
+      LearnMoreContent: "In here, the timing of using the phrase is the point of the question.<br>
+                        even when you understand the meaning of a phrase, you often don't know when to use it.<br>
+                        in addition to answering when to use it,<br>
+                        the function of adding a similar phrase is also added.<br>"
+      Explain: "Feel free to use the question card to make your study efficient !"
+    form:
+      Language: "This question is about the following language"
+      SelectLanguage: "Select language"
+      Title(Optional): "Title(Optional)"
+      TitleExplain: "The first line of text will be shown as the title if title is blank"
+      Text: "Text"
+      TextExplain: "Please enter the phrase you want to understand 
+                    more deeply and when to use, Others are easier 
+                    to answer if you include a description."
+      MotherLanguageVersion: "Mother language version text(Optional)"
+      MotherLanguageVersionExplain: "Writing your card in your own language will help others correct it."
+      submit: "submit"

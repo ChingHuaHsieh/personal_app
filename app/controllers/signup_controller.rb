@@ -38,7 +38,7 @@ private
 
   def redirect_to_userinfo
     if user_signed_in?
-      redirect_to "/posts/user_info"
+      redirect_to user_info_post_path(current_user.id)
     end
   end
 end
