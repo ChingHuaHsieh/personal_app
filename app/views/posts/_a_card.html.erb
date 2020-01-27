@@ -1,0 +1,154 @@
+<div class="card text-info mb-3 text_setting ">
+  <div class="card-header h5 upper">
+    <%= card.user.nickname %>
+    <small class="text-secondary time_text">
+      <%= card.created_at.strftime("%Y/%m/%d %H:%M") %>
+    </small>
+  </div>
+  <div class="card-body text-secondary ">
+    <h6 class="card-title font-weight-normal text-dark">
+      <%= card.description %>
+    </h6>
+
+    <% if card.when_to_use1.present? or card.when_to_use2.present? or card.when_to_use3.present? or card.when_to_use4.present? or card.when_to_use5.present? %>
+      <hr class="my-4">
+    <% end %>
+
+    <% if card.when_to_use1.present? %>
+      <h6 class="card-title whentouse font-weight-normal ">
+        <%=  t('show.ACard.WhenToUseIt1', card_when_to_use1: card.when_to_use1 ) %>
+      </h6>
+    <% end %>
+    <% if card.when_to_use2.present? %>
+      <h6 class="card-title whentouse font-weight-normal  ">
+        <%=  t('show.ACard.WhenToUseIt2', card_when_to_use2: card.when_to_use2 ) %>
+      </h6>
+    <% end %>
+    <% if card.when_to_use3.present? %>
+      <h6 class="card-title whentouse font-weight-normal ">
+        <%=  t('show.ACard.WhenToUseIt3', card_when_to_use3: card.when_to_use3 ) %>
+      </h6>
+    <% end %>
+    <% if card.when_to_use4.present? %>
+      <h6 class="card-title whentouse font-weight-normal ">
+        <%=  t('show.ACard.WhenToUseIt4', card_when_to_use4: card.when_to_use4 ) %>
+      </h6>
+    <% end %>
+    <% if card.when_to_use5.present? %>
+      <h6 class="card-title whentouse font-weight-normal ">
+        <%=  t('show.ACard.WhenToUseIt5', card_when_to_use5: card.when_to_use5 ) %>
+      </h6>
+    <% end %>
+  </div>
+
+  
+    
+  <% if card.relation1_description.present? %>
+    <div class="card-header h6 upper border-0">
+      <%=  t('show.ACard.RelationPhraseFirst') %>
+    </div>
+    <div class="card-body text-secondary ">
+      <h6 class="card-title font-weight-normal  text-dark">
+        <%= card.relation1_description %>
+      </h6>
+
+      <% if card.relation1_when_to_use1.present? or card.relation1_when_to_use2.present? or card.relation1_when_to_use3.present? %>
+        <hr class="my-4">
+      <% end %>
+
+      <% if card.relation1_when_to_use1.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R1_WhenToUseIt1', card_relation1_when_to_use1: card.relation1_when_to_use1 ) %>
+        </h6>
+      <% end %>
+      <% if card.relation1_when_to_use2.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R1_WhenToUseIt2', card_relation1_when_to_use2: card.relation1_when_to_use2 ) %>
+        </h6>
+      <% end %>
+      <% if card.relation1_when_to_use3.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R1_WhenToUseIt3', card_relation1_when_to_use3: card.relation1_when_to_use3 ) %>
+        </h6>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if card.relation2_description.present? %>
+    <div class="card-header h6 upper border-0">
+      <%=  t('show.ACard.RelationPhraseTheSecond') %>
+    </div>
+    <div class="card-body text-secondary ">
+      <h6 class="card-title font-weight-normal  text-dark">
+        <%= card.relation2_description %>
+      </h6>
+
+      <% if card.relation2_when_to_use1.present? or card.relation2_when_to_use2.present? or card.relation2_when_to_use3.present? %>
+        <hr class="my-4">
+      <% end %>
+
+      <% if card.relation2_when_to_use1.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R2_WhenToUseIt1', card_relation2_when_to_use1: card.relation2_when_to_use1 ) %>
+        </h6>
+      <% end %>
+      <% if card.relation2_when_to_use2.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R2_WhenToUseIt2', card_relation2_when_to_use2: card.relation2_when_to_use2 ) %>
+        </h6>
+      <% end %>
+      <% if card.relation2_when_to_use3.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R2_WhenToUseIt3', card_relation2_when_to_use3: card.relation2_when_to_use3 ) %>
+        </h6>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if card.relation3_description.present? %>
+    <div class="card-header h6 upper border-0">
+      <%=  t('show.ACard.RelationPhraseTheThird') %>
+    </div>
+    <div class="card-body text-secondary ">
+      <h6 class="card-title font-weight-normal  text-dark">
+        <%= card.relation3_description %>
+      </h6>
+
+      <% if card.relation3_when_to_use1.present? or card.relation3_when_to_use2.present? or card.relation3_when_to_use3.present? %>
+        <hr class="my-4">
+      <% end %>
+
+      <% if card.relation3_when_to_use1.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R3_WhenToUseIt1', card_relation3_when_to_use1: card.relation3_when_to_use1 ) %>
+        </h6>
+      <% end %>
+      <% if card.relation3_when_to_use2.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R3_WhenToUseIt2', card_relation3_when_to_use2: card.relation3_when_to_use2 ) %>
+        </h6>
+      <% end %>
+      <% if card.relation3_when_to_use3.present? %>
+        <h6 class="card-title whentouse font-weight-normal">
+          <%=  t('show.ACard.R3_WhenToUseIt3', card_relation3_when_to_use3: card.relation3_when_to_use3 ) %>
+        </h6>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="comment_box">
+  <%= render partial: 'comment', collection: card.comments, as: "comment" %>
+</div>
+
+
+<div class="text-right paddingleft">
+  <div class="comment_area">
+    <%= form_for @comment, url: post_comments_path(card.id), method: 'POST', html: {id: "new_comment_#{card.id}"}  do |f| %>   
+      <%= f.text_field :text, class:"form-control width80", placeholder: "#{t('show.ACard.MakeSomeComment')}", id: "comment_text_#{card.id}"  %> 
+      <%= button_tag type: 'submit', class: 'btn-info rounded comment-button' do %>
+        <i class="fas fa-paper-plane "></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

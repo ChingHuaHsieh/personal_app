@@ -11,3 +11,7 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

@@ -1,0 +1,23 @@
+ja:                              ## 言語名
+  dictionary:                    ## 共通系であることを示す
+    header:                       ## 画面のタイトル
+      logout: "ログアウト"
+      language: "言語"
+      mypage: "マイページ"
+      NewQuestion: "新しい質問"
+      answer: "解答"
+    side_bar:
+      SearchCard: "検索"
+      mypage: "マイページ"
+      NewQuestion: "新しい質問"
+      answer: "解答"
+    user_card:
+      title: "%{user_name}のホーム"
+      Edit: "編集"
+      NativeLanguage: " 母語 : %{user_mother_language}"
+      LanguageOfStudy: " 学習言語 : %{user_learning_language}"
+      CardWritten: "質問カード数 : %{user_q_cards_count}"
+      CorrectionsMade: "解答回数 : %{user_a_cards_count}"
+    user_info:
+      CardWritten: "最新カード"
+      CorrectionsMade: "解答したカード"

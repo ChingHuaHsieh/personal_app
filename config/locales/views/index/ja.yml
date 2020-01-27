@@ -1,0 +1,8 @@
+ja:
+  index:
+    upper:
+      Home: "ホーム"
+      QuestionCardList: "質問カードリスト"
+    mid:
+      CardAwaitingYourCorrection: "添削を待っている最新の質問カード"
+      CardWrittenInTheLanguageYouAreLearning: "あなたが学習してる言語の質問カード"

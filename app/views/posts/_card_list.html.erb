@@ -1,0 +1,39 @@
+<%= link_to post_path(card.id), class: "list-group-item list-group-item-action flex-column align-items-start" do %>
+  <p class="text-info border-bottom width25">
+    <%= card.user.nickname %>
+  </p>
+  <div class="d-flex w-100 justify-content-between">
+    <% if card.theme.present? %>
+      <h5 class="mb-1 whentouse width50 padding-bottom10">
+        <%= card.theme%>
+      </h5>
+    <% else %>
+      <h5 class="mb-1 whentouse width50 padding-bottom10">
+        <%= card.description.truncate(20) %>
+      </h5>
+    <% end %>
+    <small>
+      <%= card.created_at.strftime("%Y/%m/%d %H:%M") %>
+    </small>
+  </div>
+  <p class="mb-1">
+    <%= simple_format card.description %>
+  </p>
+  <div class="text-right">
+    <div>
+      <span data-toggle="tooltip" data-placement="top" title="Number of answers">
+        <i class="far fa-check-circle"></i>
+        <small class="text-secondary margin8">
+          <%= card.a_cards.count %>
+        </small>
+      </span>
+
+      <span class="marginleft" data-toggle="tooltip" data-placement="top" title="Language">
+        <i class="fas fa-pencil-alt"></i>
+        <small class="text-secondary margin8">
+          <%= card.language.value %>
+        </small>
+      </span>
+    </div>
+  </div>
+<% end %>

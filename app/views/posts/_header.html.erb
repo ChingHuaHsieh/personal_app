@@ -1,0 +1,45 @@
+<nav class="navbar navbar-light bg-info box-shadow" id="page_top">
+  <%= link_to user_info_post_path(current_user.id), class: "text-white none_text_dec" do %>
+    <i class="fab fa-suse fa-3x"></i>
+    <span >
+      <%= current_user.nickname %>
+    </span>
+  <% end %>
+  <div class="btn-group">
+    <%= link_to "#{t('dictionary.header.logout')}", destroy_user_session_path, method: "DELETE", class: "btn btn-secondary" %>
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-globe-asia"></i>  <%=  t('dictionary.header.language') %>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-item">
+        <%= link_to "English", :locale => 'en' %>
+      </div>
+      <div class="dropdown-item">
+        <%= link_to "日本語", :locale => 'ja' %>
+      </div><div class="dropdown-item">
+        <%= link_to "中文（繁體）", :locale => 'zh' %>
+      </div>
+    </div>
+  </div>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "#{t('dictionary.header.mypage')}", user_info_post_path(current_user.id), class: "nav-link active text-light" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "#{t('dictionary.header.NewQuestion')}", new_post_path, class: "nav-link active text-light" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "#{t('dictionary.header.answer')}", "#", class: "nav-link active text-light" %>
+      </li>
+    </ul>
+    <form class="form-block my-2 my-lg-0">
+      <input class="form-control mr-sm-2 width140" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 bg-light text-secondary" type="submit">Search card <i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,23 @@
+zh:                              ## 言語名
+  dictionary:                    ## 共通系であることを示す
+    header:                       ## 画面のタイトル
+      logout: "登出"
+      language: "語言"
+      mypage: "個人頁面"
+      NewQuestion: "新提問卡"
+      answer: "解答"
+    side_bar:
+      SearchCard: "搜尋"
+      mypage: "個人頁面"
+      NewQuestion: "新提問卡"
+      answer: "解答"
+    user_card:
+      title: "%{user_name}的個人頁面"
+      Edit: "編輯"
+      NativeLanguage: " 母語 : %{user_mother_language}"
+      LanguageOfStudy: " 學習中的語言 : %{user_learning_language}"
+      CardWritten: "提問卡數量 : %{user_q_cards_count}"
+      CorrectionsMade: "解答次數 : %{user_a_cards_count}"
+    user_info:
+      CardWritten: "最新投稿"
+      CorrectionsMade: "解答後的投稿"

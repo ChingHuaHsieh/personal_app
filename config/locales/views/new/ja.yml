@@ -1,0 +1,23 @@
+ja:
+  new:
+    upper:
+      Home: "ホーム"
+      NewQuestionCard: "新しい質問カード"
+      QuestionCard: "質問カード"
+      LearnMore: "もっと知る"
+      LearnMoreContent: "質問ポイントはフレーズの使用タイミングです。
+                        たとえフレーズの意味を理解したとしても、
+                        いつに使用するのを分からないのはよくあります。
+                        質問カードを作成して、解答してもらいましょう！"
+      Explain: "気軽に質問カードを使って学習効率を上げましょう！"
+    form:
+      Language: "質問カードの言語"
+      SelectLanguage: "言語を選択してください"
+      Title(Optional): "タイトル(任意)"
+      TitleExplain: "タイトルが記入されてなかったら、説明の一行目はタイトルになります。"
+      Text: "説明"
+      TextExplain: "もっと使用方法と使用タイミングを理解したいフレーズを入力してください。
+                    より詳しく説明すると解答者が分かりやすくなります。"
+      MotherLanguageVersion: "母語で説明を書きましょう。(任意)"
+      MotherLanguageVersionExplain: "母語で一緒に説明すると解答者にもっと理解してもらえますし、回答者の勉強にもなります。"
+      submit: "提出"

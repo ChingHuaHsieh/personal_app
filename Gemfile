@@ -79,3 +79,5 @@ gem 'devise'
 
   #  static_date_management  #
 gem 'active_hash', '~> 1.5.3'
+
+gem 'gretel' 

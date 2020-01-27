@@ -1,0 +1,100 @@
+.margin8 {
+  margin: 8px 0;
+}
+
+.margin15 {
+  margin: 0 15px;
+}
+
+.corrections {
+  display: block;
+  width: 185px;
+  margin: 0 auto;
+}
+
+.corrections_btn {
+  background-color: #e9ecef;
+  padding: 15px 0 ;
+}
+
+.corrections_area {
+  margin: 50px 0 30px;
+}
+
+.marginleft {
+  margin-left: 15px;
+}
+
+.paddingtop {
+  padding-top: 8px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.time_text {
+  font-size: 13px;
+  line-height: 25px;
+}
+
+.whentouse {
+  padding-left: 10px;
+  border-left: 5px solid #17a2b8;
+}
+
+.marginbottom0 {
+  margin-bottom: 0;
+}
+
+.comment_area {
+  background-color: #e9ecef;
+  border-radius: .3rem;
+  margin-bottom: 2rem;
+  padding: 15px;
+}
+
+.width80 {
+  width: 90%;
+  display: inline;
+}
+
+.paddingleft {
+  padding-left: 150px;
+}
+
+.marginleft100 {
+  margin-left: 100px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0,0,0,.125);
+  font-weight: 300;
+}
+
+.borderbottom {
+  border-bottom: 0;
+}
+
+.comment_text {
+  background-color: white;
+  padding: 15px;
+  word-break: break-all;
+}
+
+.paddingbottom0 {
+  padding-bottom: 0;
+}
+
+.paddingbottom15 {
+  padding-bottom: 15px;
+}
+
+.paddingtop15 {
+  padding-top: 15px;
+}
+
+.destroy_btn {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}

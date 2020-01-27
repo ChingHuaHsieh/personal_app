@@ -1,2 +1,55 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<%= render partial: "header" %>
+
+<div class="mid_container">
+  
+  <%= render partial: "side_bar" %>
+  
+  <div class="center container padding0 border paddingbottom50 rounded">
+    <nav aria-label="breadcrumb ">
+      <ol class="breadcrumb margin0 border-bottom">
+        <li class="breadcrumb-item">
+          <%= link_to "#{t('index.upper.Home')}", user_info_post_path(current_user.id) %>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <%= t('index.upper.QuestionCardList') %>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid padding0 ">
+      <div class="container paddingbottom5">
+        <div class="upper">
+          <h1 class="display-4 letter_space"><%= t('index.upper.QuestionCardList') %></h1>
+        </div>
+        
+      </div>
+    </div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active text-info" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+          <%= t('index.mid.CardAwaitingYourCorrection') %>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-info" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+          <%= t('index.mid.CardWrittenInTheLanguageYouAreLearning') %>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="list-group">
+          <%= render partial: 'card_list', collection: @q_cards_mother_language, as: "card" %>
+        </div>
+      </div>
+      
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="list-group">
+          <%= render partial: 'card_list', collection: @q_cards_same, as: "card" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <%= render partial: "random_list" %>
+</div>

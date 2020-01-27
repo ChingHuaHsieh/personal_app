@@ -10,4 +10,8 @@ class User < ApplicationRecord
   belongs_to_active_hash :site_language
 
   has_one_attached :image
+  has_many :a_cards
+  has_many :q_cards
+  has_many :comments
+
 end

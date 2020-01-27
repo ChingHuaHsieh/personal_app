@@ -1,0 +1,60 @@
+<ul class="nav flex-column border_right hidden border-right rounded">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2 width140" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-info my-2 my-sm-0 width140 " type="submit"><%=  t('dictionary.side_bar.SearchCard') %> <i class="fas fa-search"></i></button>
+  </form>
+  <li class="nav-item">
+    <%= link_to "#{t('dictionary.side_bar.mypage')}", user_info_post_path(current_user.id), class: "nav-link active text-secondary" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#{t('dictionary.side_bar.NewQuestion')}", new_post_path, class: "nav-link active text-secondary" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#{t('dictionary.side_bar.answer')}", posts_path, class: "nav-link active text-secondary" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "実装予定リスト", "#", class: "nav-link active text-secondary", "data-toggle": "modal", "data-target": "#exampleModalCenter" %>
+  </li>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog width700 modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">以下はこれから実装予定の機能です</h5>
+        </div>
+        <ul class="modal-body margin20">
+          <li class="padding-bottom10">
+            質問カードの編集機能を実装します
+          </li>
+          <li class="padding-bottom10">
+            質問カードの削除機能を実装します
+          </li>
+          <li class="padding-bottom10">
+            質問カードの検索機能（説明内容検索、使用タイミング検索）（ransackを使用）を実装します
+          </li>
+          <li class="padding-bottom10">
+            カードを１ページに10枚のみを表示する機能を実装します
+          </li>
+          <li class="padding-bottom10">
+            いつでも勉強できるように、画面右側にあるランダムにカードを表示する機能を実装します
+          </li>
+          <li class="padding-bottom10">
+            ユーザーの個人写真をアップロードできる機能を実装します
+          </li>
+          <li class="padding-bottom10">
+            解答カードとコメントにいいね機能を実装します
+          </li>
+          <li class="padding-bottom10">
+            使用者は他のユーザーの個人ページに行ける機能を実装します
+          </li>
+        </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ul>

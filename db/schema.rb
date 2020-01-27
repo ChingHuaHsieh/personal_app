@@ -10,7 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_025054) do
+ActiveRecord::Schema.define(version: 2020_01_18_154913) do
+
+  create_table "a_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "q_card_id", null: false
+    t.string "theme"
+    t.text "description"
+    t.string "when_to_use1"
+    t.string "when_to_use2"
+    t.string "when_to_use3"
+    t.string "when_to_use4"
+    t.string "when_to_use5"
+    t.string "relation1_theme"
+    t.text "relation1_description"
+    t.string "relation1_when_to_use1"
+    t.string "relation1_when_to_use2"
+    t.string "relation1_when_to_use3"
+    t.string "relation2_theme"
+    t.text "relation2_description"
+    t.string "relation2_when_to_use1"
+    t.string "relation2_when_to_use2"
+    t.string "relation2_when_to_use3"
+    t.string "relation3_theme"
+    t.text "relation3_description"
+    t.string "relation3_when_to_use1"
+    t.string "relation3_when_to_use2"
+    t.string "relation3_when_to_use3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["q_card_id"], name: "index_a_cards_on_q_card_id"
+    t.index ["user_id"], name: "index_a_cards_on_user_id"
+  end
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,6 +62,27 @@ ActiveRecord::Schema.define(version: 2020_01_13_025054) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "a_card_id", null: false
+    t.text "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["a_card_id"], name: "index_comments_on_a_card_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "q_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "theme"
+    t.text "description"
+    t.text "m_description"
+    t.integer "language_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_q_cards_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

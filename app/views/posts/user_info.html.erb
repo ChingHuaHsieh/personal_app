@@ -1,73 +1,36 @@
-<nav class="navbar navbar-light bg-info box-shadow">
-  <%= link_to user_info_posts_path, class: "text-white none_text_dec" do %>
-    <i class="fab fa-suse fa-2x"></i>
-    <span >
-      <%= current_user.nickname %>
-    </span>
-  <% end %>
-  <div class="btn-group">
-    <%= link_to "logout", destroy_user_session_path, method: "DELETE", class: "btn btn-secondary" %>
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i class="fas fa-globe-asia"></i>  language
-    </button>
-    <div class="dropdown-menu dropdown-menu-right">
-      <%= link_to "English", "#", class: "dropdown-item" %>
-      <%= link_to "japanese", "#", class: "dropdown-item" %>
-      <%= link_to "Chinese", "#", class: "dropdown-item" %>
-    </div>
-  </div>
-</nav>
+<%= render partial: "header" %>
 
 <div class="mid_container">
-  <ul class="nav flex-column border_right">
-    <form class="form-inline">
-      <input class="form-control mr-sm-2 width140" type="search" placeholder="Enter something" aria-label="Search">
-      <button class="btn btn-info my-2 my-sm-0 width140 " type="submit">Search card <i class="fas fa-search"></i></button>
-    </form>
-    <li class="nav-item">
-      <%= link_to "mypage", "#", class: "nav-link active text-secondary" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "new question", "#", class: "nav-link active text-secondary" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "answer", "#", class: "nav-link active text-secondary" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "logout", "#", class: "nav-link active text-secondary" %>
-    </li>
-  </ul>
-
-  <div class="center">
-    <div class="card text-info  mb-3 text_setting">
-      <div class="card-header h2"><%= current_user.nickname %>'s home</div>
-      <div class="card-body text-secondary">
-        <h6 class="card-title border-bottom padding-bottom"><i class="fas fa-portrait"></i>  Native language : <%= current_user.mother_language.value %></h5>
-        <h6 class="card-title border-bottom padding-bottom "><i class="fas fa-book-open"></i>  Language of study : <%= current_user.learning_language.value %></h5>
-
-        <nav aria-label="Page navigation example">
-          <ul class="pagination ">
-            <li class="page-item border-right width50">Card Written : 0</li>
-            <li class="page-item width50 padding_left">Corrections made : 2</li>
-            
-          </ul>
-        </nav>
-
-        <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
-      </div>
-    </div>
+  
+  <%= render partial: "side_bar" %>
+  
+  <%= render partial: "user_card" %>
+    
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Card Written</a>
+        <a class="nav-link active text-info" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+          <%=  t('dictionary.user_info.CardWritten') %>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Corrections made</a>
+        <a class="nav-link text-info" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+          <%=  t('dictionary.user_info.CorrectionsMade') %>
+        </a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="list-group">
+          <%= render partial: 'card_list', collection: @q_cards, as: "card" %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="list-group">
+          <%= render partial: 'card_list', collection: @q_cards_for_answer, as: "card" %>
+        </div>
+      </div>
     </div>
+
   </div>
   
   <%= render partial: "random_list" %>
