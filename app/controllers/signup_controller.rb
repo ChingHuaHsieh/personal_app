@@ -16,7 +16,7 @@ class SignupController < ApplicationController
       sign_in @user unless user_signed_in?
       redirect_to action: 'done'
     else
-      render registration_signup_index_path unless @user.valid?
+      render action: 'registration' unless @user.valid?
     end
   end
 

@@ -22,14 +22,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :posts, only: [:index, :new, :create, :show] do
-  #   resources :comments, only: [:create]
-  #   member do
-  #     get 'user_info'
-  #     post 'a_card_create'
-  #   end
-  # end
-
   resources :comments, only: [:destroy]
 
 end

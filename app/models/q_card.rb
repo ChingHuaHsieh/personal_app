@@ -4,5 +4,5 @@ class QCard < ApplicationRecord
   belongs_to_active_hash :language
 
   belongs_to :user
-  has_many :a_cards
+  has_many :a_cards, dependent: :destroy
 end

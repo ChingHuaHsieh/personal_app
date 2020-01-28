@@ -1,12 +1,12 @@
 <%= render partial: "logo" %>
 <%# English_view %>
-<% if current_user.site_language_id == 1 %>
+<% if current_user.mother_language_id == 1 %>
   <div class="jumbotron jumbotron-fluid padding">
     <div class="container text_align_center">
       <h1 class="display-4">Hello ! <span class="title"><%= current_user.nickname %></span> !<br> We appreciate your joining.</h1>
       <hr class="my-4">
       <p class="lead">In  <span class="title">Solutions</span>, you can use the following service.</p>
-      <%= link_to "Get started", user_info_posts_path, class: "btn btn-info btn-lg" %>
+      <%= link_to "Get started", user_info_post_path(current_user.id), class: "btn btn-info btn-lg" %>
     </div>
   </div>
   <div class="card_area">
@@ -31,7 +31,7 @@
   </div>
 
 <%# 日本語_view %>
-<% elsif current_user.site_language_id == 2 %>
+<% elsif current_user.mother_language_id == 2 %>
   <div class="jumbotron jumbotron-fluid padding">
     <div class="container text_align_center">
       <h1 class="display-4">こんにちは ! <span class="title"><%= current_user.nickname %></span> !<br> 新規登録完了しました。</h1>
@@ -62,13 +62,13 @@
   </div>
 
 <%# 中文_view %>
-<% elsif current_user.site_language_id == 3 %>
+<% elsif current_user.mother_language_id == 3 %>
   <div class="jumbotron jumbotron-fluid padding">
     <div class="container text_align_center">
       <h1 class="display-4">謝謝您 ! <span class="title"><%= current_user.nickname %></span> !<br> 會員登入已經完成、<br>歡迎加入我們。</h1>
       <hr class="my-4">
       <p class="lead">在<span class="title">Solutions</span>, 您可以使用以下的服務。</p>
-      <%= link_to "Get started", user_info_posts_path(current_user.id), class: "btn btn-info btn-lg" %>
+      <%= link_to "Get started", user_info_post_path(current_user.id), class: "btn btn-info btn-lg" %>
     </div>
   </div>
   <div class="card_area">

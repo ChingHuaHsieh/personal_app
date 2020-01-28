@@ -10,29 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_154913) do
+ActiveRecord::Schema.define(version: 2020_01_28_132927) do
 
   create_table "a_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "q_card_id", null: false
-    t.string "theme"
     t.text "description"
     t.string "when_to_use1"
     t.string "when_to_use2"
     t.string "when_to_use3"
     t.string "when_to_use4"
     t.string "when_to_use5"
-    t.string "relation1_theme"
     t.text "relation1_description"
     t.string "relation1_when_to_use1"
     t.string "relation1_when_to_use2"
     t.string "relation1_when_to_use3"
-    t.string "relation2_theme"
     t.text "relation2_description"
     t.string "relation2_when_to_use1"
     t.string "relation2_when_to_use2"
     t.string "relation2_when_to_use3"
-    t.string "relation3_theme"
     t.text "relation3_description"
     t.string "relation3_when_to_use1"
     t.string "relation3_when_to_use2"
@@ -92,7 +88,6 @@ ActiveRecord::Schema.define(version: 2020_01_18_154913) do
     t.string "encrypted_password", default: "", null: false
     t.integer "mother_language_id", null: false
     t.integer "learning_language_id", null: false
-    t.integer "site_language_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
