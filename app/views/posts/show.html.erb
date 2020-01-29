@@ -3,7 +3,7 @@
   <%= render partial: "side_bar" %>
   
   <!-- Question card -->
-  <div class="container padding0 ">
+  <div class="center  padding0 ">
     <div class="border rounded">
       <nav class=" upper_area_show" aria-label="breadcrumb">
         <ul class="breadcrumb margin0 border-bottom ">
@@ -82,8 +82,10 @@
           <%= @q_card.m_description %>
         </p>
       <% end %>
-      <div class="corrections_btn border-top  ">
-        <%= link_to "#{t('show.Upper.MakeCorrections')}", "#correction_top", class: "btn btn-info btn-sm corrections animate" %>
+      <div class="corrections_btn border-top ">
+        <% unless current_user.id == @q_card.user.id%>
+          <%= link_to "#{t('show.Upper.MakeCorrections')}", "#correction_top", class: "btn btn-info btn-sm corrections animate" %>
+        <% end %>
       </div>
     </div>
 

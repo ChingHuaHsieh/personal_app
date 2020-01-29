@@ -13,35 +13,57 @@
     <% if card.when_to_use1.present? or card.when_to_use2.present? or card.when_to_use3.present? or card.when_to_use4.present? or card.when_to_use5.present? %>
       <hr class="my-4">
     <% end %>
-
     <% if card.when_to_use1.present? %>
-      <h6 class="card-title whentouse font-weight-normal ">
-        <%=  t('show.ACard.WhenToUseIt1', card_when_to_use1: card.when_to_use1 ) %>
+      <h6 class="card-title whentouse font-weight-normal displayflex">
+        <div class="width156">
+          <%=  t('show.ACard.WhenToUseIt1') %>
+        </div>
+        <div class="width66">
+          <%= card.when_to_use1 %>
+        </div>
       </h6>
     <% end %>
     <% if card.when_to_use2.present? %>
-      <h6 class="card-title whentouse font-weight-normal  ">
-        <%=  t('show.ACard.WhenToUseIt2', card_when_to_use2: card.when_to_use2 ) %>
+      <h6 class="card-title whentouse font-weight-normal displayflex">
+        <div class="width156">
+          <%=  t('show.ACard.WhenToUseIt1') %>
+        </div>
+        <div class="width66">
+          <%= card.when_to_use2 %>
+        </div>
       </h6>
     <% end %>
     <% if card.when_to_use3.present? %>
-      <h6 class="card-title whentouse font-weight-normal ">
-        <%=  t('show.ACard.WhenToUseIt3', card_when_to_use3: card.when_to_use3 ) %>
+      <h6 class="card-title whentouse font-weight-normal displayflex">
+        <div class="width156">
+          <%=  t('show.ACard.WhenToUseIt1') %>
+        </div>
+        <div class="width66">
+          <%= card.when_to_use3 %>
+        </div>
       </h6>
     <% end %>
     <% if card.when_to_use4.present? %>
-      <h6 class="card-title whentouse font-weight-normal ">
-        <%=  t('show.ACard.WhenToUseIt4', card_when_to_use4: card.when_to_use4 ) %>
+      <h6 class="card-title whentouse font-weight-normal displayflex">
+        <div class="width156">
+          <%=  t('show.ACard.WhenToUseIt1') %>
+        </div>
+        <div class="width66">
+          <%= card.when_to_use4 %>
+        </div>
       </h6>
     <% end %>
     <% if card.when_to_use5.present? %>
-      <h6 class="card-title whentouse font-weight-normal ">
-        <%=  t('show.ACard.WhenToUseIt5', card_when_to_use5: card.when_to_use5 ) %>
+      <h6 class="card-title whentouse font-weight-normal displayflex">
+        <div class="width156">
+          <%=  t('show.ACard.WhenToUseIt1') %>
+        </div>
+        <div class="width66">
+          <%= card.when_to_use5 %>
+        </div>
       </h6>
     <% end %>
   </div>
-
-  
     
   <% if card.relation1_description.present? %>
     <div class="card-header h6 upper border-0">
@@ -57,18 +79,33 @@
       <% end %>
 
       <% if card.relation1_when_to_use1.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R1_WhenToUseIt1', card_relation1_when_to_use1: card.relation1_when_to_use1 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation1_when_to_use1 %>
+          </div>
         </h6>
       <% end %>
       <% if card.relation1_when_to_use2.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R1_WhenToUseIt2', card_relation1_when_to_use2: card.relation1_when_to_use2 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation1_when_to_use2 %>
+          </div>
         </h6>
       <% end %>
       <% if card.relation1_when_to_use3.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R1_WhenToUseIt3', card_relation1_when_to_use3: card.relation1_when_to_use3 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation1_when_to_use3 %>
+          </div>
         </h6>
       <% end %>
     </div>
@@ -86,20 +123,34 @@
       <% if card.relation2_when_to_use1.present? or card.relation2_when_to_use2.present? or card.relation2_when_to_use3.present? %>
         <hr class="my-4">
       <% end %>
-
       <% if card.relation2_when_to_use1.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R2_WhenToUseIt1', card_relation2_when_to_use1: card.relation2_when_to_use1 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation2_when_to_use1 %>
+          </div>
         </h6>
       <% end %>
       <% if card.relation2_when_to_use2.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R2_WhenToUseIt2', card_relation2_when_to_use2: card.relation2_when_to_use2 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation2_when_to_use2 %>
+          </div>
         </h6>
       <% end %>
       <% if card.relation2_when_to_use3.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R2_WhenToUseIt3', card_relation2_when_to_use3: card.relation2_when_to_use3 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation2_when_to_use3 %>
+          </div>
         </h6>
       <% end %>
     </div>
@@ -117,20 +168,35 @@
       <% if card.relation3_when_to_use1.present? or card.relation3_when_to_use2.present? or card.relation3_when_to_use3.present? %>
         <hr class="my-4">
       <% end %>
-
+      
       <% if card.relation3_when_to_use1.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R3_WhenToUseIt1', card_relation3_when_to_use1: card.relation3_when_to_use1 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation3_when_to_use1 %>
+          </div>
         </h6>
       <% end %>
       <% if card.relation3_when_to_use2.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R3_WhenToUseIt2', card_relation3_when_to_use2: card.relation3_when_to_use2 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation3_when_to_use2 %>
+          </div>
         </h6>
       <% end %>
       <% if card.relation3_when_to_use3.present? %>
-        <h6 class="card-title whentouse font-weight-normal">
-          <%=  t('show.ACard.R3_WhenToUseIt3', card_relation3_when_to_use3: card.relation3_when_to_use3 ) %>
+        <h6 class="card-title whentouse font-weight-normal displayflex">
+          <div class="width156">
+            <%=  t('show.ACard.WhenToUseIt1') %>
+          </div>
+          <div class="width66">
+            <%= card.relation3_when_to_use3 %>
+          </div>
         </h6>
       <% end %>
     </div>

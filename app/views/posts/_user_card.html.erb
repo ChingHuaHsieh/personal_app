@@ -1,27 +1,26 @@
-<div class="center container padding0">
-  <div class="card text-info  mb-3 text_setting ">
-    <div class="card-header h2 upper">
-      <%=  t('dictionary.user_card.title', user_name: @user.nickname ) %>
-      <% if current_user.id == @user.id %>
-        <%= link_to "#{t('dictionary.user_card.Edit')}", "#", method: "GET", class: "btn btn-info" %>
-      <% end %>
-    </div>
-    <div class="card-body text-secondary ">
-      <h6 class="card-title border-bottom padding-bottom">
-        <i class="fas fa-portrait"></i>  <%=  t('dictionary.user_card.NativeLanguage', user_mother_language: @user.mother_language.value ) %>
-      </h6>
-      <h6 class="card-title border-bottom padding-bottom ">
-        <i class="fas fa-book-open"></i>  <%=  t('dictionary.user_card.LanguageOfStudy', user_learning_language: @user.learning_language.value ) %>
-      </h6>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination ">
-          <li class="page-item border-right width50">
-            <%=  t('dictionary.user_card.CardWritten', user_q_cards_count: @user.q_cards.count ) %>
-          </li>
-          <li class="page-item width50 padding_left">
-            <%=  t('dictionary.user_card.CorrectionsMade', user_a_cards_count: @user.a_cards.count ) %>
-          </li>
-        </ul>
-      </nav>
-    </div>
+<div class="card text-info  mb-3 text_setting ">
+  <div class="card-header h2 upper">
+    <%=  t('dictionary.user_card.title', user_name: @user.nickname ) %>
+    <% if current_user.id == @user.id %>
+      <%= link_to "#{t('dictionary.user_card.Edit')}", "#", method: "GET", class: "btn btn-info" %>
+    <% end %>
   </div>
+  <div class="card-body text-secondary ">
+    <h6 class="card-title border-bottom padding-bottom">
+      <i class="fas fa-portrait"></i>  <%=  t('dictionary.user_card.NativeLanguage', user_mother_language: @user.mother_language.value ) %>
+    </h6>
+    <h6 class="card-title border-bottom padding-bottom ">
+      <i class="fas fa-book-open"></i>  <%=  t('dictionary.user_card.LanguageOfStudy', user_learning_language: @user.learning_language.value ) %>
+    </h6>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination ">
+        <li class="page-item border-right width50">
+          <%=  t('dictionary.user_card.CardWritten', user_q_cards_count: @user.q_cards.count ) %>
+        </li>
+        <li class="page-item width50 padding_left">
+          <%=  t('dictionary.user_card.CorrectionsMade', user_a_cards_count: @user.a_cards.count ) %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

@@ -4,5 +4,5 @@ en:
       Home: "Home"
       QuestionCardList: "Question Card List"
     mid:
-      CardAwaitingYourCorrection: "Card awaiting your correction"
-      CardWrittenInTheLanguageYouAreLearning: "Card written in the language you are learning"
+      CardAwaitingYourCorrection: "Waiting correction"
+      CardWrittenInTheLanguageYouAreLearning: "Written in the language you are learning"

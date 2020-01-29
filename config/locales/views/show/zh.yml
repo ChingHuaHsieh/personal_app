@@ -5,7 +5,7 @@ zh:
       QuestionCardDetail: "提問卡詳細"
       MakeCorrections: "解答"
     ACard:
-      WhenToUseIt1: "在這情況下可以使用 : %{card_when_to_use1}"      
+      WhenToUseIt1: "在這情況下可以使用 : "      
       WhenToUseIt2: "在這情況下可以使用 : %{card_when_to_use2}"      
       WhenToUseIt3: "在這情況下可以使用 : %{card_when_to_use3}"      
       WhenToUseIt4: "在這情況下可以使用 : %{card_when_to_use4}"      

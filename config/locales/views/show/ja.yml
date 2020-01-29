@@ -5,7 +5,7 @@ ja:
       QuestionCardDetail: "質問カード詳細"
       MakeCorrections: "解答します"
     ACard:
-      WhenToUseIt1: "こんな時に使えます : %{card_when_to_use1}"      
+      WhenToUseIt1: "こんな時に使えます : "      
       WhenToUseIt2: "こんな時に使えます : %{card_when_to_use2}"      
       WhenToUseIt3: "こんな時に使えます : %{card_when_to_use3}"      
       WhenToUseIt4: "こんな時に使えます : %{card_when_to_use4}"      

@@ -5,7 +5,7 @@ en:
       QuestionCardDetail: "Question card detail"
       MakeCorrections: "Make corrections"
     ACard:
-      WhenToUseIt1: "When to use it : %{card_when_to_use1}"      
+      WhenToUseIt1: "When to use it : "      
       WhenToUseIt2: "When to use it : %{card_when_to_use2}"      
       WhenToUseIt3: "When to use it : %{card_when_to_use3}"      
       WhenToUseIt4: "When to use it : %{card_when_to_use4}"      
