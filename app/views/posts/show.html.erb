@@ -93,147 +93,149 @@
     </div>
 
     <!-- Corrections area -->
-    <div class="corrections_area shadow-sm"  id="correction_top">
-      <div class="alert alert-info" role="alert">
-        <div class="upper">
-          <h4 class="alert-heading marginbottom0" >
-            <%=  t('show.form.MakeCorrections') %>
-          </h4>
-          <%= link_to "#page_top", class: "animate" do %>
-            <span class="text-secondary">
-              <i class="fas fa-arrow-up"></i> <%=  t('show.form.ReturnTOP') %>
-            </span>
-          <% end %>
-        </div>
-        <hr class="my-4">
-        
-        <%= form_with model: @a_card, local: true, class: "padding30", url: a_card_create_post_path(@q_card), method: 'POST', novalidate: 'novalidate' do |f| %>
-          
-          <div class="form-group">
-            <%= f.label "#{t('show.form.description')}" %><span class="text-danger">( <i class="fas fa-exclamation"></i> )</span>
-            <%= f.text_area :description, { class: 'form-control',  placeholder: "#{t('show.form.WriteACorrections')}",rows: "3" } %>
+    <% if !@q_card.user.id == current_user.id %>
+      <div class="corrections_area shadow-sm"  id="correction_top">
+        <div class="alert alert-info" role="alert">
+          <div class="upper">
+            <h4 class="alert-heading marginbottom0" >
+              <%=  t('show.form.MakeCorrections') %>
+            </h4>
+            <%= link_to "#page_top", class: "animate" do %>
+              <span class="text-secondary">
+                <i class="fas fa-arrow-up"></i> <%=  t('show.form.ReturnTOP') %>
+              </span>
+            <% end %>
           </div>
           <hr class="my-4">
           
-          <div class="form-group">
-            <%= f.label "#{t('show.form.WhenToUseIt1')}" %>
-            <%= f.text_field :when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.expalin1')}" } %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label "#{t('show.form.WhenToUseIt2')}" %>
-            <%= f.text_field :when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.expalin2')}" } %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label "#{t('show.form.WhenToUseIt3')}" %>
-            <%= f.text_field :when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.expalin3')}" } %>
-          </div>
-
-          <div class="text-right" >
-            <span class="text-secondary cursor" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              <%=  t('show.form.MakeMoreExample') %>
-            </span>
-          </div>
-          <div class="collapse" id="collapseExample">
+          <%= form_with model: @a_card, local: true, class: "padding30", url: a_card_create_post_path(@q_card), method: 'POST', novalidate: 'novalidate' do |f| %>
+            
             <div class="form-group">
-              <%= f.label "#{t('show.form.WhenToUseIt4')}" %>
-              <%= f.text_field :when_to_use4, { class: 'form-control',  placeholder: "#{t('show.form.expalin4')}" } %>
-            </div>
-            <div class="form-group">
-              <%= f.label "#{t('show.form.WhenToUseIt5')}" %>
-              <%= f.text_field :when_to_use5, { class: 'form-control',  placeholder: "#{t('show.form.expalin5')}" } %>
-            </div>
-          </div>
-
-          <hr class="my-4">
-          
-          <div class="form-group">
-            <%= f.label "#{t('show.form.RelationPhraseFirst')}" %>
-            <%= f.text_field :relation1_description, { class: 'form-control',  placeholder: "#{t('show.form.R1_explain')}" } %>
-          </div>
-          <hr class="my-4">
-          
-          <div class="form-group">
-            <%= f.label "#{t('show.form.R1_WhenToUseIt1')}" %>
-            <%= f.text_field :relation1_when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.R1_expalin1')}" } %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label "#{t('show.form.R1_WhenToUseIt2')}" %>
-            <%= f.text_field :relation1_when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.R1_expalin2')}" } %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label "#{t('show.form.R1_WhenToUseIt3')}" %>
-            <%= f.text_field :relation1_when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.R1_expalin3')}" } %>
-          </div>
-          
-          <hr class="my-4">
-
-          <div class="text-right" >
-            <span class="text-secondary cursor" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-              <%=  t('show.form.MakeRelationPhrase') %>
-            </span>
-          </div>
-          <div class="collapse" id="collapseExample2">
-            <div class="form-group">
-              <%= f.label "#{t('show.form.RelationPhraseSecond')}" %>
-              <%= f.text_field :relation2_description, { class: 'form-control',  placeholder: "#{t('show.form.R2_explain')}" } %>
+              <%= f.label "#{t('show.form.description')}" %><span class="text-danger">( <i class="fas fa-exclamation"></i> )</span>
+              <%= f.text_area :description, { class: 'form-control',  placeholder: "#{t('show.form.WriteACorrections')}",rows: "3" } %>
             </div>
             <hr class="my-4">
             
             <div class="form-group">
-              <%= f.label "#{t('show.form.R2_WhenToUseIt1')}" %>
-              <%= f.text_field :relation2_when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.R2_expalin1')}" } %>
+              <%= f.label "#{t('show.form.WhenToUseIt1')}" %>
+              <%= f.text_field :when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.expalin1')}" } %>
             </div>
 
             <div class="form-group">
-              <%= f.label "#{t('show.form.R2_WhenToUseIt2')}" %>
-              <%= f.text_field :relation2_when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.R2_expalin2')}" } %>
+              <%= f.label "#{t('show.form.WhenToUseIt2')}" %>
+              <%= f.text_field :when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.expalin2')}" } %>
             </div>
 
             <div class="form-group">
-              <%= f.label "#{t('show.form.R2_WhenToUseIt3')}" %>
-              <%= f.text_field :relation2_when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.R2_expalin3')}" } %>
+              <%= f.label "#{t('show.form.WhenToUseIt3')}" %>
+              <%= f.text_field :when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.expalin3')}" } %>
             </div>
-              
-            <hr class="my-4">
+
             <div class="text-right" >
-              <span class="text-secondary cursor" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+              <span class="text-secondary cursor" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <%=  t('show.form.MakeMoreExample') %>
+              </span>
+            </div>
+            <div class="collapse" id="collapseExample">
+              <div class="form-group">
+                <%= f.label "#{t('show.form.WhenToUseIt4')}" %>
+                <%= f.text_field :when_to_use4, { class: 'form-control',  placeholder: "#{t('show.form.expalin4')}" } %>
+              </div>
+              <div class="form-group">
+                <%= f.label "#{t('show.form.WhenToUseIt5')}" %>
+                <%= f.text_field :when_to_use5, { class: 'form-control',  placeholder: "#{t('show.form.expalin5')}" } %>
+              </div>
+            </div>
+
+            <hr class="my-4">
+            
+            <div class="form-group">
+              <%= f.label "#{t('show.form.RelationPhraseFirst')}" %>
+              <%= f.text_field :relation1_description, { class: 'form-control',  placeholder: "#{t('show.form.R1_explain')}" } %>
+            </div>
+            <hr class="my-4">
+            
+            <div class="form-group">
+              <%= f.label "#{t('show.form.R1_WhenToUseIt1')}" %>
+              <%= f.text_field :relation1_when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.R1_expalin1')}" } %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "#{t('show.form.R1_WhenToUseIt2')}" %>
+              <%= f.text_field :relation1_when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.R1_expalin2')}" } %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label "#{t('show.form.R1_WhenToUseIt3')}" %>
+              <%= f.text_field :relation1_when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.R1_expalin3')}" } %>
+            </div>
+            
+            <hr class="my-4">
+
+            <div class="text-right" >
+              <span class="text-secondary cursor" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                 <%=  t('show.form.MakeRelationPhrase') %>
               </span>
             </div>
-            <div class="collapse" id="collapseExample3">
+            <div class="collapse" id="collapseExample2">
               <div class="form-group">
-                <%= f.label "#{t('show.form.RelationPhraseThird')}" %>
-                <%= f.text_field :relation3_description, { class: 'form-control',  placeholder: "#{t('show.form.R3_explain')}" } %>
+                <%= f.label "#{t('show.form.RelationPhraseSecond')}" %>
+                <%= f.text_field :relation2_description, { class: 'form-control',  placeholder: "#{t('show.form.R2_explain')}" } %>
               </div>
               <hr class="my-4">
               
               <div class="form-group">
-                <%= f.label "#{t('show.form.R3_WhenToUseIt1')}" %>
-                <%= f.text_field :relation3_when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.R3_expalin1')}" } %>
+                <%= f.label "#{t('show.form.R2_WhenToUseIt1')}" %>
+                <%= f.text_field :relation2_when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.R2_expalin1')}" } %>
               </div>
 
               <div class="form-group">
-                <%= f.label "#{t('show.form.R3_WhenToUseIt2')}" %>
-                <%= f.text_field :relation3_when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.R3_expalin2')}" } %>
+                <%= f.label "#{t('show.form.R2_WhenToUseIt2')}" %>
+                <%= f.text_field :relation2_when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.R2_expalin2')}" } %>
               </div>
 
               <div class="form-group">
-                <%= f.label "#{t('show.form.R3_WhenToUseIt3')}" %>
-                <%= f.text_field :relation3_when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.R3_expalin3')}" } %>
+                <%= f.label "#{t('show.form.R2_WhenToUseIt3')}" %>
+                <%= f.text_field :relation2_when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.R2_expalin3')}" } %>
               </div>
                 
               <hr class="my-4">
-            </div>
-          </div>
+              <div class="text-right" >
+                <span class="text-secondary cursor" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                  <%=  t('show.form.MakeRelationPhrase') %>
+                </span>
+              </div>
+              <div class="collapse" id="collapseExample3">
+                <div class="form-group">
+                  <%= f.label "#{t('show.form.RelationPhraseThird')}" %>
+                  <%= f.text_field :relation3_description, { class: 'form-control',  placeholder: "#{t('show.form.R3_explain')}" } %>
+                </div>
+                <hr class="my-4">
+                
+                <div class="form-group">
+                  <%= f.label "#{t('show.form.R3_WhenToUseIt1')}" %>
+                  <%= f.text_field :relation3_when_to_use1, { class: 'form-control',  placeholder: "#{t('show.form.R3_expalin1')}" } %>
+                </div>
 
-          <%= f.submit "#{t('show.form.submit')}", class:"btn btn-info  text-center" %>
-        <% end %>      
+                <div class="form-group">
+                  <%= f.label "#{t('show.form.R3_WhenToUseIt2')}" %>
+                  <%= f.text_field :relation3_when_to_use2, { class: 'form-control',  placeholder: "#{t('show.form.R3_expalin2')}" } %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label "#{t('show.form.R3_WhenToUseIt3')}" %>
+                  <%= f.text_field :relation3_when_to_use3, { class: 'form-control',  placeholder: "#{t('show.form.R3_expalin3')}" } %>
+                </div>
+                  
+                <hr class="my-4">
+              </div>
+            </div>
+
+            <%= f.submit "#{t('show.form.submit')}", class:"btn btn-info  text-center" %>
+          <% end %>      
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   
   <%= render partial: "random_list" %>
