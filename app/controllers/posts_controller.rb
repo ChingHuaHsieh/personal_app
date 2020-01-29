@@ -13,7 +13,6 @@ class PostsController < ApplicationController
 
   def create
     @q_card = QCard.new(q_card_params)
-
     if @q_card.save
       redirect_to user_info_post_path(current_user.id)
     else
@@ -25,6 +24,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @q_card = QCard.find(params[:id])
+    @q_card.destroy if @q_card.user_id == current_user.id
+    redirect_to action: 'index'
   end
 
   def update
@@ -35,13 +37,11 @@ class PostsController < ApplicationController
     @a_cards = @q_card.a_cards.includes(:user, :comments)
     @a_card = @q_card.a_cards.new
     @comment = Comment.new
-
   end
 
   def a_card_create
     @q_card = QCard.find(params[:id])
     @a_card = @q_card.a_cards.new(a_card_params)
-
     if @a_card.save
       redirect_to action: 'show'
     else
@@ -50,10 +50,9 @@ class PostsController < ApplicationController
   end
 
   def user_info
-    @q_cards = current_user.q_cards.order("id DESC")
+    @user = User.find(params[:id])
+    @q_cards = @user.q_cards.order("id DESC")
     @q_cards_for_answer = QCard.joins(:a_cards).where(a_cards: {user_id: current_user.id}).order("id DESC").uniq
-
-    
   end
 
   private
@@ -68,24 +67,20 @@ class PostsController < ApplicationController
 
   def a_card_params
     params.require(:a_card).permit(
-      :theme,
       :description,
       :when_to_use1,
       :when_to_use2,
       :when_to_use3,
       :when_to_use4,
       :when_to_use5,
-      :relation1_theme,
       :relation1_description,
       :relation1_when_to_use1,
       :relation1_when_to_use2,
       :relation1_when_to_use3,
-      :relation2_theme,
       :relation2_description,
       :relation2_when_to_use1,
       :relation2_when_to_use2,
       :relation2_when_to_use3,
-      :relation3_theme,
       :relation3_description,
       :relation3_when_to_use1,
       :relation3_when_to_use2,

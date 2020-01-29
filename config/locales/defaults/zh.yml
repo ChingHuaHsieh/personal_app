@@ -21,3 +21,9 @@ zh:                              ## 言語名
     user_info:
       CardWritten: "最新投稿"
       CorrectionsMade: "解答後的投稿"
+    confirm:
+      DestroyCardBtn: "刪除提問卡"
+      DestroyCard: "真的要刪除這張提問卡嗎?"
+      DestroyComment: "真的要刪除這個留言嗎?"
+      MaybeLatter: "再等等"
+      YesIWant: "是"

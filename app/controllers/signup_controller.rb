@@ -31,8 +31,7 @@ private
       :password,
       :password_confirmation,
       :mother_language_id,
-      :learning_language_id,
-      :site_language_id
+      :learning_language_id
     )
   end
 

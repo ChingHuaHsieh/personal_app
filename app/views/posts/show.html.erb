@@ -5,19 +5,43 @@
   <!-- Question card -->
   <div class="container padding0 ">
     <div class="border rounded">
-      <nav aria-label="breadcrumb ">
-        <ol class="breadcrumb margin0 border-bottom">
+      <nav class=" upper_area_show" aria-label="breadcrumb">
+        <ul class="breadcrumb margin0 border-bottom ">
           <li class="breadcrumb-item">
             <%= link_to "#{t('show.Upper.Home')}", user_info_post_path(current_user.id) %>
           </li>
           <li class="breadcrumb-item">
-            <%= link_to @q_card.user.nickname , "#" %>
+            <%= link_to @q_card.user.nickname , user_info_post_path(@q_card.user.id) %>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
             <%= t('show.Upper.QuestionCardDetail') %>
           </li>
-        </ol>
+        </ul>
+        <% if current_user.id == @q_card.user.id or current_user.nickname == "emma" %>
+          <!-- Button trigger modal -->
+          <div class="border-top margin10" data-toggle="modal" data-target="#destroy_btn">
+            <%= link_to "#{t('dictionary.confirm.DestroyCardBtn')}", "#", class: "btn btn-info btn-sm" %>
+          </div>
+        <% end %>
+        <!-- Modal -->
+        <div class="modal fade" id="destroy_btn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              
+              <h5 class="modal-body text-center font-weight-normal">
+                <%= t('dictionary.confirm.DestroyCard') %>
+              </h5>
+              <div class="modal-footer">
+                <div class="btn btn-secondary" data-dismiss="modal">
+                  <%= t('dictionary.confirm.MaybeLatter') %>
+                </div>
+                <%= link_to "#{t('dictionary.confirm.YesIWant')}", post_path(@q_card), method: "DELETE", class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
+      
       <div class="jumbotron jumbotron-fluid padding0 ">
         <div class="container paddingbottom5">
           <% if @q_card.theme.present? %>

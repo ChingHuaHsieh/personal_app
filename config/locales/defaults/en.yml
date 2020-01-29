@@ -21,3 +21,9 @@ en:                              ## 言語名
     user_info:
       CardWritten: "Card Written"
       CorrectionsMade: "Corrections made"
+    confirm:
+      DestroyCardBtn: "Destroy card"
+      DestroyCard: "Really destroy this question card?"
+      DestroyComment: "Really destroy this comment?"
+      MaybeLatter: "Maybe latter"
+      YesIWant: "Yes, I want"

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
     # For details on the DSL available within this file, see 
-    resources :posts, only: [:index, :new, :create, :show] do
+    resources :posts, only: [:index, :new, :create, :show, :destroy] do
       resources :comments, only: [:create]
       member do
         get 'user_info'

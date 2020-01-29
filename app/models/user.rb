@@ -7,7 +7,6 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :mother_language
   belongs_to_active_hash :learning_language
-  belongs_to_active_hash :site_language
 
   has_one_attached :image
   has_many :a_cards

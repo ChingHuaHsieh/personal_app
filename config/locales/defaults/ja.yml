@@ -21,3 +21,9 @@ ja:                              ## 言語名
     user_info:
       CardWritten: "最新カード"
       CorrectionsMade: "解答したカード"
+    confirm:
+      DestroyCardBtn: "カードを削除します"
+      DestroyCard: "ほんとにこのカードを削除しますか?"
+      DestroyComment: "このコメントを削除しますか"
+      MaybeLatter: "あとで"
+      YesIWant: "はい"
